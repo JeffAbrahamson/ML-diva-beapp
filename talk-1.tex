@@ -8,20 +8,9 @@
   \titlepage
 \end{frame}
 
-\begin{frame}
-  \vphrase{Supervised}
-\end{frame}
+\talksection{Welcome}
 
-\begin{frame}
-  \vphrase{Unsupervised}
-\end{frame}
-
-\begin{frame}
-  \vphrase{Reinforcement}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Course structure}
+\begin{frame}{Course structure}
   \only<1>{
     Two full days:
     \begin{itemize}
@@ -43,7 +32,15 @@
 \end{frame}
 
 \begin{frame}
-  \vphrase{Curse of Dimensionality}
+  \vphrase{Supervised}
+\end{frame}
+
+\begin{frame}
+  \vphrase{Unsupervised}
+\end{frame}
+
+\begin{frame}
+  \vphrase{Reinforcement}
 \end{frame}
 
 \begin{frame}
@@ -73,8 +70,9 @@
   \frametitle{Probability}
   \phrase{events}
   \begin{itemize}
-  \item independent
-  \item dependent
+  \item Independence
+  \item Dependence
+  \item Bayes Theorem
   \end{itemize}
 \end{frame}
 
@@ -346,6 +344,13 @@
   }
 \end{frame}
 
+\begin{frame}{Inference Concepts}
+    \begin{itemize}
+    \item Law of large numbers
+    \item Central limit theorem
+    \end{itemize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Sampling distribution}
 
@@ -371,6 +376,14 @@
 
 
 \talksection{Linear Algebra}
+
+\begin{frame}
+  \vphrase{Vector Space}
+\end{frame}
+
+\begin{frame}
+  \vphrase{Curse of Dimensionality}
+\end{frame}
 
 \begin{frame}
   \frametitle{Linear algebra: basics}
@@ -520,6 +533,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\talksection{Break}
+
+\talksection{Features}
 
 \begin{frame}
   \vphrase{Features and Modeling}
@@ -692,9 +707,7 @@
   }
 \end{frame}
 
-\begin{frame}{Linear and Logistic Regression}
-\end{frame}
-
+\talksection{Linear and Logistic Regression}
 
 \begin{frame}
   \frametitle{Linear models}
@@ -1259,6 +1272,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\talksection{Support Vector Machines}
+
 \begin{frame}
   \frametitle{The simple explanation}
   \only<1>{
@@ -1295,6 +1310,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\talksectionT{CART}{Classification and Regression Trees}
 
 \begin{frame}{$kd$-tree}
   \only<1>{
@@ -1409,7 +1426,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\talksection{Images}
+\talksection{Topic: Images}
 
 \begin{frame}{Images}
   \only<1>{
@@ -1546,7 +1563,7 @@
 \end{frame}
 
 
-\talksection{Face Recognition}
+\talksection{Topic: Face Recognition}
 
 \begin{frame}
   \frametitle{Eigenfaces}
@@ -1669,7 +1686,7 @@
 \end{frame}
 
 
-\talksection{Handwriting Recognition}
+\talksection{Topic: Handwriting Recognition}
 
 \begin{frame}
   \frametitle{Introduction to Handwriting Recognition}
@@ -1811,7 +1828,7 @@
   \vphrase{video time}
 \end{frame}
 
-\talksection{Anomaly Detection}
+\talksection{Topic: Anomaly Detection}
 
 \begin{frame}
   \frametitle{Introduction to Anomaly Detection}
@@ -1893,7 +1910,7 @@
 \end{frame}
 
 
-\talksection{Anomaly Detection (not time)}
+\talksection{Topic: Anomaly Detection (not time)}
 
 \begin{frame}
   \frametitle{Introduction to Anomaly Detection}
@@ -1946,6 +1963,8 @@
     $k$-Means
   }
 \end{frame}
+
+\talksection{Local Outlier Factor}
 
 \begin{frame}{Local Outlier Factor (LOF)}
   \only<1>{
@@ -2050,27 +2069,8 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Examples}
-  \only<1>{
-    \vphrase{ping times}
-  }
-  \only<2>{
-    \vphrase{httpd response times}
-  }
-  \only<3>{
-    \vphrase{single/multiple host access abuse (DOS/DDOS)}
-  }
-  \only<4>{
-    \vphrase{bank card fraud}
-  }
-  \only<5>{
-    \vphrase{spam}
-  }
-\end{frame}
 
-
-\talksection{Music}
+\talksection{Topic: Music}
 
 \begin{frame}
   \cimghh{fourier-1.png}
@@ -2088,7 +2088,7 @@
 \end{frame}
 
 
-\talksection{Time Series}
+\talksection{Topic: Time Series}
 
 \begin{frame}
   \frametitle{Introduction to time series}
@@ -2189,7 +2189,7 @@
 \end{frame}
 
 
-\talksection{HMM}
+\talksection{Hidden Markov Models}
 
 \begin{frame}
   \phrase{``simplest dynamic Bayesian network''}
@@ -2289,7 +2289,7 @@
 \end{frame}
 
 
-\talksection{Recommendation}
+\talksection{Topic: Recommendation}
 
 
 \begin{frame}
@@ -3062,15 +3062,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\talksection{NLP}
+\talksection{Topic: Natural Language Processing}
 
 \begin{frame}
   \frametitle{Linear Programming}
-
     \begin{align*}
       \text{Maximize \ } & c^T x \\
       \text{subject to \ } & Ax \le b
     \end{align*}
+
+    \purple{Warning: this is exclusively ANN (and probably LLM) now}
 \end{frame}
 
 \begin{frame}
@@ -3488,7 +3489,9 @@
 \talksection{Neural Networks}
 
 \begin{frame}{Architecture}
-  \only<1>{\vphrase{It's how we connect the dots (the states).}}
+  \only<1>{
+    \vphrase{It's how we connect the dots (the states).}
+  }
   \only<2>{Feedforward neural networks
     \begin{itemize}
     \item Flow is unidirectional
@@ -3525,7 +3528,7 @@
 \end{frame}
 
 \begin{frame}{Recurrent neural networks (RNN)}
-\vphrase{Video time}  
+\vphrase{Animated gif time}
 \end{frame}
 
 \begin{frame}
@@ -3704,6 +3707,7 @@
   \only<2>{\vphrase{Example: simple classification tasks}}
   \only<3>{\vphrase{Example: time series}}
 \end{frame}
+
 \talksection{Recurrent Neural Networks}
 
 \begin{frame}
@@ -3720,8 +3724,7 @@
 \end{frame}
 
 
-\talksection{ConvNets}
-% Convolutional Neural Networks
+\talksectionT{Convolutional Neural Networks}{ConvNets}
 
 \begin{frame}{Tensors}
   \only<1>{
