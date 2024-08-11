@@ -1,0 +1,1043 @@
+\input ../talk-header.tex
+\title{Machine Learning and AI}
+\subtitle{Jour 2 : Développement et Intégration de Projets IA}
+
+\newcommand\hugo[0]{\vfill\prevwork{Hugo Mougard, Machine Learning, CC BY-SA 4.0}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Doing Data Science}
+
+\begin{frame}[t]
+  \frametitle{Perspectives}
+
+  \vspace{1cm}
+  \begin{itemize}
+  \item Data science is iterative
+  \item Start simple, get better
+  \end{itemize}
+
+  \only<2>{\blue{Sometimes there's no business case to do more.\\You want to know where that threshold is so you can stop.}}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Risks}
+
+  \vspace{1cm}
+  \begin{itemize}
+  \item Nothing is guaranteed\gray{, but competitors are innovating and experimenting}
+  \item Examples from past projects can help, but often leads to ``this is different''
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Success}
+  \vspace{2cm}
+  \centerline{\blue{Think early about how to measure success.}}
+  \vspace{1cm}
+  \only<2>{The definition of success will evolve.}
+\end{frame}
+
+\begin{frame}{Andrew Ng Methodology — Lifecycle of an ML Project}
+  Four phases:
+  \begin{enumerate}
+    \item Project scope definition
+    \item Data management
+    \item Modeling
+    \item Deployment
+  \end{enumerate}
+  Each phase has its own particular challenges.
+
+  \hugo
+\end{frame}
+
+\begin{frame}{1. Project Scope Definition}
+  Keypoints:
+  \begin{itemize}
+    \item Delimitation of the task to be accomplished
+    \item Definition of success indicators
+    \item Budget in terms of time, personnel, etc.
+    \end{itemize}
+
+    \hugo
+\end{frame}
+
+\begin{frame}{2. Data Management}
+  Keypoints:
+  \begin{itemize}
+    \item Unbiased data collection method
+    \item Clear definition of inputs and outputs
+    \item Robust data processing pipeline without training/production disparities
+    \item Reproducibility and experiment management
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+\begin{frame}{3. Modeling}
+  Keypoints:
+  \begin{itemize}
+    \item Training that takes into account production needs (model size, speed, etc.)
+    \item Error analysis, often by significant data slices
+    \item Reproducibility and experiment management
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+\begin{frame}{4. Deployment}
+  Keypoints:
+  \begin{itemize}
+    \item Scaling
+    \item Detection of data and concept drifts
+    \item Monitoring
+    \item Retraining process
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+\begin{frame}{CRISP-DM}
+  The cross-industry standard process for data mining.
+
+  The major phases:
+  \begin{itemize}
+  \item Business Understanding
+  \item Data Understanding
+  \item Data Preparation
+  \item Modeling
+  \item Evaluation
+  \item Deployment
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Technical standpoint — MLOps}
+  From a technical standpoint, Data Science projects management is called MLOps:
+
+  \begin{itemize}
+    \item Tools bridging the gap from proof of concept to production
+    \item Techniques to comply with regulatory obligations
+    \item Methods for mitigating ethical issues
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+\begin{frame}{State of MLOps}
+  It's still a young practice, even if it's grown enormously in ten years.
+  \begin{itemize}
+    \item Rapid evolution, many competing libraries
+    \item Much less stable than DevOps
+    \item Adoption much less homogeneous than DevOps
+    \item Co-evolution with legislation and regulation
+  \end{itemize}
+  Given the instability of the domain, broad principles are more
+  important than specific techniques.
+
+  \hugo
+\end{frame}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Data}
+
+\begin{frame}{Data Management Phases}
+  Two distinct phases:
+  \begin{itemize}
+    \item Definition and calibration \only<2>{\blue{\small\it (what's needed, how collected, accuracy)}}
+    \item Retrieval, labeling and organisation \only<2>{\blue{\small\it (extraction, labeling, organising)}}
+  \end{itemize}
+
+  \only<3>{
+    \blue{Definition:}
+    \begin{itemize}
+    \item \blue{Identify Data Requirements}
+    \item \blue{Data Sources}
+    \item \blue{Data Standards {\small\it(formats, naming conventions, \dots)}}
+    \end{itemize}
+  }
+  \only<4>{
+    \blue{Calibration}
+    \begin{itemize}
+    \item \blue{Data Quality Metrics {\small\it(accuracy, completeness, consistency, timeliness, \dots)}}
+    \item \blue{Validation Rules}
+    \item \blue{Data Integration}
+    \item \blue{Tools and Technologies}
+    \end{itemize}
+  }
+  \only<5>{
+    \blue{Retrieval:}
+    \begin{itemize}
+    \item \blue{Data Extraction}
+    \item \blue{Data Aggregation}
+    \end{itemize}
+  }
+  \only<6>{
+    \blue{Labeling:}
+    \begin{itemize}
+    \item \blue{Metadata assignment}
+    \item \blue{Data Tagging}
+    \item \blue{Annotations}
+    \end{itemize}
+  }
+  \only<7>{
+    \blue{Organisation:}
+    \begin{itemize}
+    \item \blue{Data Structuring}
+    \item \blue{Data Storage}
+    \item \blue{Data Indexing}
+    \item \blue{Data Management}
+    \end{itemize}
+  }
+
+  \hugo
+\end{frame}
+
+\begin{frame}{Objectives}
+  We want primarily to address two questions:
+  \begin{itemize}
+    \item What are the relevant inputs and outputs?
+    \item What level of performance can we expect?
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{\textit{Trash in Trash out} Principle}
+  Fundamental Principle of Machine Learning:
+
+  \purple{Data definition is the \textit{central} point of a machine learning system.}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Research vs Industry}
+  \begin{description}
+    \item[Research] $\text{System} = \text{Data} + \overbrace{\text{Parameters} + \text{Model}}^{\text{Work}}$
+    \item[Industry] $\text{System} = \overbrace{\text{Data} + \text{Parameters}}^{\text{Work}} + \text{Model}$
+  \end{description}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Definition Example – Translation}
+  How to define the output?
+  \begin{enumerate}
+    \item I was overwhelmed with joy. → J'ai été submergé par la joie.
+    \item I was overwhelmed with joy. → Je fus submergé de joie.
+    \item I was overwhelmed with joy. → Je fus terrassé par la joie.
+  \end{enumerate}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Definition Example – Audio}
+  How to define the input?
+  \begin{enumerate}
+    \item Um… I'll be there in 5 minutes
+    \item Um, I'll be there in 5 minutes
+    \item I'll be there in 5 minutes
+  \end{enumerate}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Definition Example – Identity Fusion}
+  How to define the output?
+  \begin{itemize}
+    \item Martin Durant, 44000, …, <martin@durant.fr>
+    \item Martin Durant, 44000, …, <martin.durant@gmail.com>
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{What is at stake?}
+  All these decisions change the function that the model will approximate.
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Types of Data}
+  Two primary criteria:
+  \begin{itemize}
+    \item Size of the dataset
+    \item Structured or unstructured data
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Size of the Dataset}
+  How much data we have influences what is important.
+
+  \begin{description}
+    \item[Small] Quality of annotations is crucial
+    \item[Large] Quality of data processing processes is crucial
+  \end{description}
+
+  \bigskip
+  \purple{A subset of a large dataset can behave like a small dataset
+    (especially a critical slice).}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Structured~/~Unstructured Data}
+  Data structure affects what's easy and hard.
+
+  \begin{description}
+    \item[Structured] Hard to annotate for humans. Hard to augment.
+    \item[Unstructured] Likely easy to annotate for humans. Often augmentable.
+  \end{description}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Annotation Guide}
+  For annotators:
+  \begin{itemize}
+    \item Should be as robust as possible
+    \item Ideally written by a mix of domain experts / ML
+    \item Written iteratively:
+      \begin{itemize}
+        \item Write a version
+        \item Annote
+        \item Detect ambiguous points
+        \item Write a new version
+      \end{itemize}
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Coverage of Input Data}
+  Data coverage principles:
+  \begin{itemize}
+    \item All cases to be handled must be represented in the data
+    \item All cases to be handled must be represented in sufficient quantities
+    \item It's particularly important to avoid discrimination on protected attributes
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Calibration}
+  Estimating expected performance:
+  \begin{itemize}
+    \item Bibliographic research on existing approaches
+    \item Estimation of human performance
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+
+\begin{frame}{Human Level Performance (HLP)}
+
+  Human Level Performance (HLP) refers to the capability of AI systems
+  or models to perform tasks at a level comparable to that of a
+  human.
+
+  Achieving HLP means that the AI can handle specific tasks with a
+  similar degree of accuracy, efficiency, and reliability as a human
+  expert in that domain.
+
+\end{frame}
+
+\begin{frame}{Human Level Performance}
+
+\begin{itemize}
+\item \textbf{Benchmark for Performance:} HLP serves as a benchmark to
+  estimate the potential maximum performance of a system.
+\item \textbf{Bayes' Error Estimation:} It helps in estimating the
+  Bayes' error, which is the minimum possible error due to the
+  inherent randomness in the data.
+\item \textbf{Annotation by External Processes:} HLP is crucial when
+  annotations are generated by external processes rather than human
+  annotators.
+\item \textbf{Unstructured Data:} Particularly relevant for tasks
+  involving unstructured data (e.g., images, audio, text).
+\item \textbf{Achievable Performance:} Provides an idea of the best
+  possible performance that can be achieved by a system.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Improving Human Level Performance}
+
+\begin{itemize}
+\item \textbf{Underestimating HLP:} Sometimes, HLP is underestimated
+  to make it easier for AI models to surpass human performance.
+\item \textbf{Impact on Orientation:} Poorly defined HLP can mislead
+  the direction of development efforts, resulting in suboptimal
+  performance improvements.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Improving Human Level Performance — Example}
+
+\textbf{Example of HLP in Action:}
+\begin{enumerate}
+    \item ``Um\dots I'll be there in 5 minutes.''
+    \item ``I'll be there in 5 minutes.''
+\end{enumerate}
+
+\begin{itemize}
+\item If 80\% of annotators prefer the first transcription and 20\%
+  prefer the second, the agreement between two random annotators is
+  calculated as: \(0.8^2 + 0.2^2 = 68\%\) agreement.
+\item An algorithm that always chooses the most common transcription
+  can achieve 80\% agreement.
+\item \purple{Significant errors may be obscured by these seemingly
+    high agreement rates, highlighting the need for deeper analysis
+    beyond superficial gains.}
+\end{itemize}
+
+  \hugo
+\end{frame}
+
+\begin{frame}{Documentation}
+  Things to track during the definition and calibration process:
+
+  \begin{itemize}
+    \item Potential biases in the data that you suspect
+    \item Real data coverage issues
+    \item Regulatory issues related to the data
+  \end{itemize}
+
+  \purple{This information is crucial for properly documenting the
+    model in the long run.}
+
+  \hugo
+\end{frame}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Data Processing}
+
+\begin{frame}{Data Organization}
+  Many options:
+  \begin{itemize}
+    \item Structuring (schema, description, ...)
+    \item Scaling (SQL, NoSQL, distributed file system, ...)
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{\textit{Feature Store}}
+  In an MLOps context, feature stores are often an intermediate step
+  between the original source and processing.
+
+  \begin{itemize}
+    \item Allows storage optimized for ML
+    \item Avoids recomputing the same features
+    \item Enables discoverability
+  \end{itemize}
+
+  See \textit{Feast} for example.\\
+   \url{https://docs.feast.dev/}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Data Acquisition}
+  \begin{itemize}
+    \item Aim for a short first iteration to get feedback for subsequent phases
+    \item List potential sources and their time/money budget
+    \item Potentially have the ML team do initial annotation
+    \item Define competent profiles
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Iterations on Data}
+  \begin{itemize}
+    \item Order of magnitude: not more than x10 at once
+    \item Work jointly on source quality, processes, volume
+    \item Very different in prototyping and production phases:\\[5mm]
+      \begin{description}
+        \item[Prototyping] Gathering enough data to decide go/no-go
+        \item[Production] Deep work as the main vector to reach performance ceiling
+      \end{description}
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Metadata}
+  Because data is the heart of an ML system, follow good practices.
+
+  \begin{itemize}
+    \item Track provenance
+    \item Track transformations
+    \item Maintain reproducibility of data acquisition and transformations:\\[2mm]
+      \begin{itemize}
+        \item Increasingly important for regulation
+        \item Essential for debugging
+      \end{itemize}
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Metadata — Consequences}
+  Think about preserving metadata.
+
+  \begin{itemize}
+    \item Define data acquisition processes
+    \item Define data transformations
+    \item Implement dedicated systems
+  \end{itemize}
+
+  \purple{This leads to many architecture decisions.}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Processing Pipelines}
+
+  \begin{itemize}
+    \item Provide reproducibility and process automation
+    \item Often are directed acyclic graphs of operations
+    \item Many solutions exist
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Desirable Characteristics}
+  Strengths of a processing pipeline
+  \begin{itemize}
+    \item Adaptation to batch (development) as well as real-time (production)
+    \item Faithfulness of development/production processing
+    \item Scalability
+    \item Deployment on various targets
+    \item Ease of development
+    \item Integration with the ecosystem
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Main Processing Pipeline Solutions}
+  Strong points of each solution:
+
+  \begin{description}
+    \item Deployment options, dev/prod parity, performance\\ \url{https://www.tensorflow.org/tfx}
+    \item Kubernetes integration \url{https://www.kubeflow.org/}
+    \item Reproducibility and ``low tech'' solution \url{https://dvc.org/}
+    \item Flexible, easy to adopt, supported by clouds \url{https://mlflow.org/}
+    \item Kubernetes integration \url{https://www.pachyderm.com/}
+  \end{description}
+
+  \hugo
+\end{frame}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Modeling}
+
+\begin{frame}{Model Engineering}
+  Several key aspects to consider:
+
+  \begin{itemize}
+  \item Performance in production
+  \item Various deployments with very distinct characteristics
+  \item Interpretability
+  \item Maintainability
+  \item Compliance with regulations (non-discrimination, \dots)
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Best Practices}
+  In an industrial context, the focus is on the data, not the model~:
+
+  \begin{itemize}
+    \item Start simple (heuristic, simple model)
+    \item Use the industry standard for the task given your performance and deployment requirements
+    \item Improve data first, model second
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Model Card}
+  Model cards were introduced in \textit{Model Cards for Model Reporting}\\
+   \url{https://arxiv.org/abs/1810.03993}
+
+  \begin{itemize}
+    \item Specifies ethical and regulatory decisions related to the model
+    \item Provides transparency
+    \item Goal is informing both the public and internal teams
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Model Registry}
+  Centralized place to store and retrieve models and associated meta-data~:
+
+  \begin{itemize}
+    \item Eases deployment
+    \item Solidifies reproducibility
+  \end{itemize}
+
+  \url{https://mlflow.org/docs/latest/model-registry.html}
+
+  \hugo
+\end{frame}
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Models and Error Analysis}
+
+\begin{frame}{Introduction}
+  Error analysis is crucial during development:
+
+  \begin{itemize}
+    \item Guides future work
+    \item Determines potential progress
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Link between error analysis and interpretability}
+  \begin{itemize}
+    \item Interpretability enables error analysis
+    \item Transparency (sometimes a regulatory or functional requirement in production)
+    \item Interpretability-performance continuum:
+      \begin{itemize}
+        \item Interpretable models often insufficient to approximate desired functions
+        \item Modern performant models are black boxes
+      \end{itemize}
+  \end{itemize}
+
+  Often a dilemma in choosing a model.
+
+  \only<2>{\purple{Useless tip: humans are often not explainable.}}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Recommended Approach}
+  Some heuristics for error analysis:
+
+  \begin{itemize}
+    \item Determine relevant data slices
+    \item Estimate model performance and achievable performance on each slice
+    \item Prioritize work on slices offering the most impact
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Data Slices}
+  Idea popularized by Apple in their paper \textit{Overton: A Data System for Monitoring and Improving Machine-Learned Products}
+  and \textit{Snorkel} \url{https://www.snorkel.org/}.
+
+  {Excellent Snorkel blog} on the subject.\\
+  \url{https://www.snorkel.org/blog/slicing}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Recommended Approach — Example}
+  Let's consider working on an image classification system.
+
+  Suppose we distinguish the following slices in our image data:
+
+  \begin{itemize}
+    \item Presence of mountains
+    \item Presence of humans
+    \item Presence of cars
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Recommended Approach — Example, Continued}
+  We estimate the following performances:
+
+  \begin{tabular}{rcc}
+    \hline
+    Slice      & HLP  & Model \\
+    \hline
+    Mountains  & 65\% & 60\%  \\
+    Humans     & 96\% & 90\%  \\
+    Cars       & 80\% & 40\%  \\
+    \hline
+  \end{tabular}
+
+  Which slice is most important for improvements in the next iteration?
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Recommended Approach — Example, Conclusion}
+  Using proportions in the dataset to quantify impact:
+
+  \begin{tabular}{rcccc}
+    \hline
+    Slice      & HLP  & Model & Proportion & Potential Impact \\
+    \hline
+    Mountains  & 65\% & 60\%  & 10\%       & 0.5\% \\
+    Humans     & 96\% & 90\%  & 85\%       & 5.1\% \\
+    Cars       & 80\% & 40\%  & 1\%        & 0.4\% \\
+    \hline
+  \end{tabular}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Error Analysis}
+  Once relevant slices are identified, some options:
+
+  \begin{itemize}
+    \item Find explanatory examples of the model
+    \item Use a simpler model that globally or locally explains the
+      complex model
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Explanatory Examples}
+  Things to look for:
+
+  \begin{itemize}
+    \item \textbf{Prototypes} Representative examples of model behavior
+    \item \textbf{Counterfactual examplqes} Modification of existing
+      instances to see how prediction evolves
+    \item \textbf{Adversarial examples} Counterfactual examples with a
+      significant impact on prediction
+    \item \textbf{Influential examples} Examples that have had the
+      most impact on the model
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Explanatory Models}
+  Training models:
+  \begin{itemize}
+    \item Simple
+    \item Interpretable (linear regression, simple trees, etc.)
+    \item Approximating the complex model
+    \item Helping to understand important features
+    \item Globally (multiple examples, broad coverage)
+    \item Or locally (one example)
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Measures}
+  Once the analysis is done:
+
+  \begin{itemize}
+    \item Data augmentation
+    \item Feature engineering
+    \item Exploration of new parameters
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Further Reading}
+  \textit{Interpretable Machine Learning} book\\
+  \url{https://christophm.github.io/interpretable-ml-book/}
+
+  \hugo
+\end{frame}
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Intro to Production Deployment}
+
+\begin{frame}{Deployment Challenges}
+  \begin{itemize}
+    \item Providing a trained model to a diverse and large crowd
+    \item With ML performance observed in quality tests
+    \item With good classical performance (latency, throughput, \dots)
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Common Pitfalls}
+  What can go wrong?  \textit{(Or: what often goes wrong?)}
+
+  \begin{itemize}
+    \item Different code in development vs production
+    \item Poor dependency management
+    \item Inadequate or inappropriate architecture
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Deployment Best Practices}
+
+\begin{frame}{Deployment Strategies}
+  Several criteria allow for choosing a deployment strategy:
+
+  \begin{itemize}
+    \item Service traffic
+    \item Audience (public, internal, other services, \dots)
+    \item Deployment frequency
+    \item \dots
+  \end{itemize}
+
+  Key concepts:
+  \begin{itemize}
+    \item Progressive deployment
+    \item Rollback (ability to return to the previous state of the system)
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Shadow Deployment}
+  \begin{itemize}
+    \item Deployment of the model alongside the existing system
+    \item Model outputs are not used by the application
+    \item Analysis of model outputs and decision to continue deployment or not
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Blue/Green Deployment}
+  \begin{itemize}
+    \item Deployment of the new model (green) alongside the existing system (blue)
+    \item When tests are successful on the green system, traffic is redirected there
+    \item Allows for rollback if issues arise
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Canary Deployment}
+  \begin{itemize}
+    \item Similar to blue/green, two parallel systems
+    \item Gradual ramp-up of the green system
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Implementation}
+  The two most popular options:
+  \begin{itemize}
+    \item Kubernetes + istio
+    \item Internal tooling
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{CI/CD}
+  The launch of these deployments can be done via git tags and operations in CI/CD.
+
+  This is the gitops approach with gto project from DVC, for example\\[5mm]
+  \url{https://www.atlassian.com/git/tutorials/gitops}
+  \url{https://dvc.org/doc/gto}
+
+  \hugo
+\end{frame}
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Monitoring}
+
+\begin{frame}{Challenges}
+  \begin{itemize}
+    \item Model drift
+    \item Ensuring proper behavior of a model
+    \item Knowing when to retrain a model
+    \item Understanding the data of a model
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Common Issues}
+
+  \textbf{Data Drift}: the evolution of the input data distribution.
+
+  \purple{Gradually makes models obsolete, so need to retrain.}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Common Issues}
+  \textbf{Concept Drift}: the evolution of the correspondence between
+  outputs and inputs.
+
+  \purple{Gradually makes models obsolete, so need to retrain.}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Speed of Data Evolution}
+  Different data sets evolve at different rates.
+
+  \begin{itemize}
+    \item \textbf{User Data} often changes slowly but fundamentally
+    \item \textbf{Enterprise Data} often changes more markedly and abruptly
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Common Issues}
+  \textbf{Data Quality:}
+
+  \begin{itemize}
+    \item Missing values
+    \item Outliers
+    \item Schema changes
+    \item \dots
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Tools — Test Suites}
+  Automated execution for detection of all these challenges:
+  \begin{itemize}
+    \item Data drift
+    \item Concept drift
+    \item Poor data quality
+    \item Drop in prediction performance
+  \end{itemize}
+  The most widely used library for this is \texttt{evidently}.
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Tools — Dashboard}
+  The human-facing counterpart of test suites:
+
+  \begin{itemize}
+    \item To fuel discussion on data within the Machine Learning team
+    \item To complement more general dashboards
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Classic Monitoring}
+  In addition to these Machine Learning-specific issues, a production system needs usual monitoring.
+
+  \textit{E.g.}, the four "golden signals" in Site Reliability Engineering:
+
+  \begin{itemize}
+    \item Latency
+    \item Traffic
+    \item Errors
+    \item Saturation
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+\begin{frame}{Implementation}
+  Several solutions are common:
+
+  \begin{itemize}
+    \item {Evidently} \url{https://www.evidentlyai.com/}
+    \item {Seldon Core} \url{https://www.seldon.io/solutions/core-plus}
+    \item {TFX ExampleValidator} \url{https://www.tensorflow.org/tfx/guide/exampleval}
+    \item {Great Expectations} \url{https://docs.greatexpectations.io/docs/home/}
+  \end{itemize}
+
+  \hugo
+\end{frame}
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\talksection{Case Study}
+
+\begin{frame}
+  \vphrase{Let's talk about you}
+\end{frame}
+
+
+\end{document}
