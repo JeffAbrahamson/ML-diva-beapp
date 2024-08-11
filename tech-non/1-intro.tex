@@ -1,0 +1,404 @@
+\input ../talk-header.tex
+\title{Machine Learning et IA pour marketing et commerciaux}
+\subtitle{Introduction à l'IA et au ML}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\talksection{Bienvenue}
+
+\begin{frame}{Structure}
+  \only<1>{
+    Deux journées
+    \begin{itemize}
+    \item  29, 30 août
+    \end{itemize}
+  }
+  \only<2>{
+    \begin{itemize}
+    \item Email \url{jeff@p27.eu}
+    \item Github : \url{https://github.com/JeffAbrahamson/ML-diva-beapp}
+    \end{itemize}
+  }
+  \only<3>{
+    \begin{itemize}
+    \item Introduction à l'IA et au ML
+    \item Comment vendre l'IA
+    \item Comment piloter un projet avec le client
+    \item Introduction à l'éthique et la responsabilité en IA
+    \item Estimation et gestion des coûts
+    \item Choix de la solution appropriée
+    \end{itemize}
+  }
+  \only<4-7>{
+    Fréquents exercices en groupe.
+
+    Dans un sens, toujours le même exercice.
+    \only<5>{\textit{\purple{Ce sera un peu comme l'esprit de la
+          psychothérapie (pour ceux qui la connaissent) : apprendre en
+          faisant dans un contexte encadré.}}}
+    \only<6-7>{\textit{\purple{Une partie intégrale de votre apprentissage.}}}
+
+    Objectif : vous aider à réfléchir
+    différemment. \only<7>{\textit{\purple{Avec nos parcours
+          différents, nous apportons aussi des perspectives variées,
+          ce qui enrichit notre discussion.}}}
+
+    Je suis là pour remplir les trous côte ML.
+  }
+\end{frame}
+
+\begin{frame}{Brainstorming}
+  \solopb{\Large\bf\blue{Discuter comment on espère se servir\\ du ML et de l'IA}}
+  \vfill
+\end{frame}
+
+\talksection{Introduction à l'IA et au ML}
+
+\begin{frame}{Objectifs}
+  \begin{itemize}
+  \item Comprendre ce qu'est l'Intelligence Artificielle (IA) et le Machine Learning (ML).
+  \item Appréhender les concepts de base et les différents types de solutions IA.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Définition et Historique}
+  \begin{itemize}
+  \item Qu'est-ce que l'IA ? Brève histoire de l'IA et évolution du domaine.
+  \item Qu'est-ce que le ML ? Différence entre IA et
+    ML. \only<2>{\\ \purple{Pour nous, ML=algos et ANN, IA=LLM ou marketing}}
+  \item IA faible v \gray{fort}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{IA Faible (``Narrow AI'')}
+  \only<1>{
+  Définition :
+
+  \bigskip
+  \begin{quote}
+    L'IA faible, aussi appelée IA étroite ou spécialisée,
+    est conçue pour accomplir des tâches spécifiques. Elle excelle dans
+    une seule tâche ou un ensemble limité de tâches.
+  \end{quote}
+}
+\only<2>{
+  Characteristiques
+  \begin{itemize}
+  \item \textbf{Spécialisée :} Conçue pour résoudre des problèmes
+    particuliers (par exemple, reconnaissance faciale, traitement du
+    langage naturel, jeu d'échecs).
+  \item \textbf{Limitée :} Ne possède pas de conscience, de
+    compréhension ou de capacité à raisonner au-delà de ses paramètres
+    programmés.
+  \end{itemize}
+  }
+  \only<3>{
+    Exemples
+
+    \begin{itemize}
+    \item Siri d'Apple ou Alexa d'Amazon pour l'assistance vocale.
+    \item Algorithmes de recommandation de Netflix ou Amazon.
+    \item Voitures autonomes.
+    \item Systèmes de diagnostic médical utilisant l'apprentissage machine.
+    \end{itemize}
+  }
+  \only<4>{
+    Fonctionnement
+
+    \begin{itemize}
+    \item Utilise des algorithmes et des données pour accomplir des
+      tâches spécifiques de manière efficace.
+    \item Est très performante dans le domaine pour lequel elle est
+      conçue, mais ne peut pas généraliser ses compétences à d'autres
+      domaines.
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{IA Forte (General AI)}
+  \only<1>{
+    \gray{Definition}
+
+  \bigskip
+  \begin{quote}
+    \gray{L'IA forte, aussi appelée IA générale ou AGI (Artificial General
+    Intelligence), fait référence à des systèmes d'IA qui possèdent
+    des capacités cognitives humaines. Elle peut comprendre,
+    apprendre, et appliquer ses connaissances de manière générale,
+    similaire à un humain.}
+  \end{quote}
+}
+\only<2>{
+  \gray{Caractéristiques}
+
+  \begin{itemize}
+  \item \gray{\textbf{Polyvalente :} Capable de comprendre, apprendre
+      et appliquer ses compétences à une variété de tâches de manière
+      flexible.}
+  \item \gray{\textbf{Consciente et Réfléchie :} Possède un niveau de
+      conscience, de compréhension et de capacité à raisonner
+      comparable à celui des humains.}
+  \end{itemize}
+}
+\only<3>{
+  \gray{Exemples}
+
+  \begin{itemize}
+  \item \gray{Hypothétiquement, une IA capable de comprendre et de
+      faire n'importe quelle tâche humaine, comme écrire de la poésie,
+      résoudre des problèmes complexes en physique, ou gérer des
+      interactions sociales.}
+  \item \gray{Aucun système actuel ne correspond à la définition de
+      l'IA forte, elle reste un objectif théorique pour les
+      chercheurs.}
+  \end{itemize}
+}
+\only<4>{
+  \gray{Fonctionnement}
+
+  \begin{itemize}
+  \item \gray{Nécessite des avancées significatives en compréhension
+      des processus cognitifs humains.}
+  \item \gray{Serait capable d'apprendre de manière autonome et de
+      transférer ses connaissances d'un domaine à un autre sans
+      intervention humaine directe.}
+  \end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Comparaison}
+  \only<1>{
+    Capacité et Portée
+
+  \begin{itemize}
+  \item \textbf{IA Faible :} Très bonne dans des tâches spécifiques,
+    mais incapable de sortir de son domaine d'expertise.
+  \item \gray{\textbf{IA Forte :} En théorie, capable de performer
+      n'importe quelle tâche cognitive humaine de manière flexible.}
+  \end{itemize}
+  }
+  \only<2>{
+    Niveau de Conscience
+
+  \begin{itemize}
+  \item \textbf{IA Faible :} Aucune conscience ou compréhension réelle de ses actions.
+  \item \gray{\textbf{IA Forte :} Posséderait une conscience et une
+      compréhension semblable à celle des humains (hypothétique).}
+  \end{itemize}
+  }
+  \only<3>{
+    Exemples Actuels
+
+  \begin{itemize}
+  \item \textbf{IA Faible :} Technologies couramment utilisées
+    aujourd'hui (assistants vocaux, systèmes de recommandation,
+    chatbots).
+  \item \gray{\textbf{IA Forte :} Encore inexistante, reste un objectif
+      de recherche à long terme.}
+  \end{itemize}
+} \only<4>{ L'IA faible est ce que nous utilisons et développons
+  actuellement dans divers domaines, tandis que l'IA forte est une
+  ambition futuriste qui, si réalisée, pourrait révolutionner notre
+  compréhension et interaction avec les machines.  }
+\end{frame}
+
+\begin{frame}{Type de ML}
+  \begin{itemize}
+  \item Apprentissage supervisé, non supervisé et par renforcement
+  \item Regression vs classification
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemple : Presse}
+  \textbf{Problématique :}
+  Créer des résumés d'articles de presse pour les utilisateurs.
+
+  \textbf{Approche :}
+  \textbf{Classification :} Identifier les phrases clés à inclure dans le résumé.
+
+  \textbf{Exemple :}
+  \begin{itemize}
+  \item \textbf{Étape 1 :} Utiliser un modèle de classification pour
+    analyser les phrases d'un article et déterminer lesquelles sont
+    les plus importantes.
+  \item \textbf{Étape 2 :} Classifier chaque phrase comme "importante"
+    ou "non importante".
+  \item \textbf{Étape 3 :} Générer un résumé en sélectionnant les
+    phrases classées comme importantes.
+  \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Exemple : IoT}
+    \textbf{Problématique :}
+    Optimiser la consommation d'énergie des appareils connectés dans une maison intelligente.
+
+    \textbf{Approche :}
+    \textbf{Régression} - Prédire la consommation future d'énergie.
+
+    \textbf{Exemple :}
+    \begin{itemize}
+    \item \textbf{Étape 1 :} Collecter des données historiques sur la
+      consommation d'énergie de différents appareils.
+    \item \textbf{Étape 2 :} Utiliser un modèle de régression pour
+      prédire la consommation future d'énergie en fonction de facteurs
+      comme l'heure de la journée, la température, et les habitudes
+      d'utilisation.
+    \item \textbf{Étape 3 :} Ajuster automatiquement les paramètres des
+      appareils pour minimiser la consommation d'énergie.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemple : E-commerce}
+    \textbf{Problématique :}
+    Recommander des produits aux utilisateurs en fonction de leurs achats passés.
+
+    \textbf{Approche :}
+    \textbf{Classification} - Identifier les catégories de produits préférées des utilisateurs.
+
+    \textbf{Exemple :}
+  \begin{itemize}
+  \item \textbf{Étape 1 :} Analyser les données d'achat des
+    utilisateurs.
+  \item \textbf{Étape 2 :} Utiliser un modèle de classification pour
+    déterminer les catégories de produits les plus susceptibles
+    d'intéresser chaque utilisateur.
+  \item \textbf{Étape 3 :} Utiliser ces informations pour recommander
+    des produits similaires ou complémentaires.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemple : Santé}
+    \textbf{Problématique :}
+    Aider les médecins à diagnostiquer des maladies à partir d'images médicales.
+
+    \textbf{Approche :}
+    \textbf{Classification} - Identifier la présence de maladies dans les images.
+
+    \textbf{Exemple :}
+    \begin{itemize}
+    \item \textbf{Étape 1 :} Utiliser des images médicales annotées
+      pour entraîner un modèle de classification.
+  \item \textbf{Étape 2 :} Le modèle apprend à distinguer entre les
+    images présentant des signes de maladie et celles qui n'en
+    présentent pas.
+  \item \textbf{Étape 3 :} Le modèle est utilisé pour analyser de
+    nouvelles images et fournir un diagnostic assisté.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemple : Sites de rencontre}
+    \textbf{Problématique :}
+    Trouver des correspondances entre utilisateurs en fonction de leurs préférences et caractéristiques.
+
+    \textbf{Approche :}
+    \textbf{Classification} - Prédire la compatibilité entre deux utilisateurs.
+
+    \textbf{Exemple :}
+  \begin{itemize}
+  \item \textbf{Étape 1 :} Collecter des données sur les préférences et
+    caractéristiques des utilisateurs.
+  \item \textbf{Étape 2 :} Utiliser un modèle de classification pour
+    prédire la compatibilité entre deux utilisateurs en fonction de
+    leurs données.
+  \item \textbf{Étape 3 :} Utiliser ces prédictions pour suggérer des
+    correspondances aux utilisateurs.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemple : Comptabilité}
+  \textbf{Problématique :} Identifier les transactions frauduleuses
+  parmi des milliers de transactions financières.
+
+  \textbf{Approche :} \textbf{Classification} - Classifier les
+  transactions comme frauduleuses ou non frauduleuses.
+
+  \textbf{Exemple :}
+  \begin{itemize}
+  \item \textbf{Étape 1 :} Utiliser des données historiques sur les
+    transactions frauduleuses et non frauduleuses pour entraîner un
+    modèle de classification.
+  \item \textbf{Étape 2 :} Le modèle apprend à identifier les
+    caractéristiques des transactions frauduleuses.
+  \item \textbf{Étape 3 :} Analyser les nouvelles transactions avec le
+    modèle pour détecter les fraudes potentielles en temps réel.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Processus de création d'un modèle ML}
+  \begin{itemize}
+   \item  Collecte des données
+   \item  Préparation des données
+   \item  Entraînement du modèle
+   \item  Évaluation et ajustement
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Limites du ML}
+  \begin{itemize}
+  \item Besoin de grandes quantités de données
+  \item Problèmes de biais et d'équité
+  \item Complexité et coût
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Démystification}
+  \begin{itemize}
+  \item Ce n'est pas magique.
+  \item C'est basé sur des algorithmes mathématiques.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Bien définir son problème}
+  C'est ça, la statistique !
+  \only<1>{
+      \begin{itemize}
+      \item Identifier (précisément~!) une question ou problème
+      \item Collecter les données nécessaires
+      \item Analyser les données
+      \item En tirer des conclusions
+      \end{itemize}
+    }
+  \only<2>{
+      \begin{itemize}
+      \item Définir (précisément~!) la question ou problème
+      \item Collecter les données nécessaires
+      \item Nettoyer les données
+      \item Explorer les données
+      \item Créer un (des) modèle(s)
+      \item Communiquer les résultats
+      \item Rendre le tout reproductible
+      \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{Biais}
+  \cimghh{../tech-oui/images/bias-variance.png}
+\end{frame}
+
+\begin{frame}{Underfitting, overfitting}
+  \cimg{../tech-oui/images/under-overfitting.png}
+\end{frame}
+
+\talksection{Exercice}
+
+\begin{frame}{Brainstorming}
+  Brainstorming
+  \begin{itemize}
+  \item Réfléchir à une application mobile développée par Beapp
+  \item Identifier une fonctionnalité ou un problème spécifique où le
+    ML pourrait apporter une valeur ajoutée
+  \end{itemize}
+
+  Analyse de Faisabilité
+  \begin{itemize}
+  \item Quelles sont les données nécessaires ?
+  \item Discuter des avantages potentiels et des limitations possibles
+    de l'implémentation de cette solution.
+  \end{itemize}
+\end{frame}
+
+\end{document}

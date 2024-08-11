@@ -1,0 +1,224 @@
+\input ../talk-header.tex
+\title{Machine Learning et IA pour marketing et commerciaux}
+\subtitle{Comment piloter un projet avec le client}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Objectifs}
+  \begin{itemize}
+  \item Développer une compréhension claire de l'intégration du ML et
+    de l'IA dans les processus de développement de projets existants
+  \item Focus sur la gestion des attentes et la collaboration efficace
+    avec le client.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Présentation}
+  \begin{itemize}
+  \item \textbf{Définition et rappel} : Qu'est-ce que le ML et l'IA?
+    Pourquoi sont-ils pertinents pour le développement d'applications
+    modernes?
+  \item \textbf{Importance de l'alignement avec le projet global} :
+    Comment le ML/IA s'insère dans la vision globale du projet.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Étapes clés de l'intégration du ML/IA}
+
+  \subsubsection{Cadrage du projet}
+  \begin{itemize}
+  \item Définir les objectifs clairs avec le client.
+  \item Identifier les données disponibles et nécessaires.
+  \item Évaluation de la faisabilité technique et des bénéfices attendus.
+  \item Définir les mesures de réussites (même partiels).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Étapes clés de l'intégration du ML/IA (suite)}
+
+  \subsubsection{Conception}
+  \begin{itemize}
+  \item Prototypage rapide et itérations.
+  \item Choix des technologies et des outils.
+  \item Définition des critères de succès (y compris partiel).
+  \item Aider le client à percevoir les petites avancées progressives.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Étapes clés de l'intégration du ML/IA (suite)}
+
+  \subsubsection{Développement et mise en œuvre}
+  \begin{itemize}
+  \item Intégration du modèle ML/IA dans l'application existante.
+  \item Gestion des modifications et des mises à jour.
+  \item Tests et validations avec des données réelles.
+  \item Mise en place de systèmes d'évaluation contenue (« model drift »).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Model drift}
+  \only<1>{
+  \begin{itemize}
+  \item \textbf{Dérive des Données :} Changements dans la distribution des
+    données d'entrée sans changements dans la relation entre l'entrée
+    et la cible.  \purple{\textit{(data drift}}
+  \item \textbf{Dérive du Concept :} Changements dans la relation entre les
+    données d'entrée et la cible, affectant la manière dont le modèle
+    doit interpréter les données.  \purple{\textit{(concept drift)}}
+  \item \textbf{Dérive du Modèle :} Le terme général décrivant la
+    diminution des performances du modèle, qui peut être causée par la
+    dérive des données, la dérive du concept ou d'autres facteurs.
+    \purple{\textit{(model drift)}}
+  \end{itemize}
+}
+\only<2>{
+  \purple{\textbf{Exemple de dérive du modèle}}
+
+  \purple{Imaginons un modèle de recommandation de produits en ligne
+    qui, au fil du temps, voit ses performances
+    diminuer. Initialement, il recommandait avec précision des
+    produits que les utilisateurs achetaient souvent. Cependant, avec
+    le temps, les préférences des utilisateurs changent, de nouveaux
+    produits apparaissent, et la compétition introduit de nouvelles
+    stratégies marketing. Le modèle, entraîné sur des données plus
+    anciennes, devient moins pertinent et ses recommandations sont de
+    moins en moins suivies, ce qui montre une dérive du modèle.}
+}
+\end{frame}
+
+\begin{frame}{Dérive des données}
+  \only<1>{
+  La dérive des données, également connue sous le nom de changement de
+  covariables, se produit lorsque les propriétés statistiques des
+  données d'entrée (variables indépendantes) changent au fil du
+  temps. Ce changement peut rendre le modèle moins efficace car il a
+  été entraîné sur des données avec des caractéristiques
+  différentes. Il existe deux principaux types de dérive des données :
+
+  \begin{itemize}
+  \item \textbf{Changement de la probabilité a priori :} La
+    distribution de la variable cible reste la même, mais la
+    distribution des caractéristiques d'entrée change.
+    \purple{\textit{(prior probability shift)}}
+  \item \textbf{Changement de covariables :} La relation entre les
+    caractéristiques d'entrée et la variable cible reste la même, mais
+    la distribution des caractéristiques d'entrée change.
+    \purple{\textit{(covariate shift)}}
+  \end{itemize}
+}
+\only<2>{
+\purple{\textbf{Exemple de dérive des données}}
+
+\purple{Supposons qu'une entreprise utilise un modèle pour prédire les
+  ventes en fonction des données météorologiques. Initialement, le
+  modèle a été entraîné avec des données de températures et de
+  précipitations. Cependant, avec le changement climatique, les
+  conditions météorologiques changent : les hivers deviennent plus
+  doux et les étés plus chauds. La distribution des températures
+  change par rapport aux données d'entraînement initiales, ce qui
+  entraîne une dérive des données. Le modèle devient alors moins
+  précis car il n'a pas été entraîné pour ces nouvelles conditions
+  météorologiques.}
+}
+\end{frame}
+
+\begin{frame}{Dérive du concept}
+  \only<1>{
+  La dérive du concept fait référence au changement dans la relation
+  entre les données d'entrée et la variable cible au fil du temps. Ce
+  changement peut se produire en raison de l'évolution des tendances,
+  de nouveaux comportements ou de changements dans l'environnement qui
+  affectent le processus sous-jacent modélisé. Il existe différents
+  types de dérive du concept :
+
+  \begin{itemize}
+  \item \textbf{Dérive soudain :} Changements brusques dans la
+    distribution des données sous-jacentes.
+  \item \textbf{Dérive graduel :} Changements lents et continus au fil
+    du temps.
+  \item \textbf{Dérive répétitive :} Changements qui se produisent
+    périodiquement.
+  \item \textbf{Dérive incrémentale :} Petits changements progressifs
+    qui s'accumulent au fil du temps.
+  \end{itemize}
+}
+\only<2>{
+  \purple{\textbf{Exemple de Dérive du Concept}}
+
+  \purple{Imaginons un modèle de détection de fraudes pour une banque
+    qui a été entraîné pour détecter les transactions frauduleuses
+    basées sur des comportements spécifiques des
+    utilisateurs. Cependant, les fraudeurs changent leurs méthodes
+    pour éviter d'être détectés, adoptant de nouvelles techniques et
+    comportements. La relation entre les caractéristiques d'entrée
+    (par exemple, les montants des transactions, les heures de
+    transaction) et la variable cible (fraude ou non-fraude)
+    change. Le modèle initial, entraîné sur les anciens comportements
+    des fraudeurs, devient moins efficace. C'est un exemple de dérive
+    du concept.}  }
+\end{frame}
+
+\begin{frame}{3. Gestion des attentes et des risques}
+
+  \begin{itemize}
+  \item \textbf{Absence de garantie de résultat} :
+    \begin{itemize}
+    \item Comment communiquer efficacement les incertitudes et les risques.
+    \item Importance de la transparence avec le client.
+    \item Souligner l'intérêt des résultats partiels.
+    \end{itemize}
+  \item \textbf{Impacts sur les phases du projet} :
+    \begin{itemize}
+    \item Modifications du calendrier de développement.
+    \item Besoins en formation et en support technique pour l'équipe projet.
+    \item Recherche de littérature : existence de projets similaires pour comprendre ce qui a marché / pas marché dans le passé.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\talksection{Exercice}
+
+\begin{frame}
+\textbf{Objectif} : Simuler la planification et la gestion d'un projet
+d'intégration d'un système de recommandations basé sur l'IA dans une
+application e-commerce existante.
+\end{frame}
+
+\begin{frame}{Étapes de l'exercice}
+
+  \begin{enumerate}
+  \item \textbf{Définition de vos rôles}
+  \item \textbf{Cadrage} :
+    \begin{itemize}
+    \item Définition des objectifs du système de recommandations.
+    \item Identification des sources de données disponibles.
+    \item Discussion sur les attentes du client et établissement d'un
+      plan de communication.
+    \end{itemize}
+  \item \textbf{Conception} :
+    \begin{itemize}
+    \item Créer un prototype simplifié de la solution (sur papier).
+    \item Définition des indicateurs de performance pour évaluer la
+      solution.
+    \end{itemize}
+  \item \textbf{Présentation au client} (simulé) :
+  \item \textbf{Feedback et révision} :
+    \begin{itemize}
+    \item Retour sur les présentations / suggestions d'améliorations /
+      discussion sur les défis rencontrés.
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Conclusion}
+  Résumons les leçons apprises, des défis spécifiques liés à
+  l'intégration du ML/IA dans les projets et partageons des stratégies
+  pour améliorer la collaboration avec le client dans des projets
+  futurs.
+\end{frame}
+
+\end{document}

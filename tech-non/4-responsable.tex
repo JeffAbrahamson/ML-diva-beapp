@@ -1,0 +1,226 @@
+\input ../talk-header.tex \title{Machine Learning et IA pour marketing
+et commerciaux} \subtitle{Éthique et responsabilité}
+
+\begin{document}
+
+\begin{frame} \titlepage
+\end{frame}
+
+
+\begin{frame}{Introduction à l'éthique et la responsabilité en IA}
+  \begin{itemize}
+  \item Définition de la responsabilité dans le contexte du ML.
+  \item Importance de l'éthique, de l'accessibilité, de l'inclusivité,
+    et de l'éco-conception dans les projets ML.
+  \item Introduction aux normes RGPD et leur importance pour la
+    protection des données.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD (en révision\dots)}
+    \begin{itemize}
+        \item {Consentement}
+        \item {Intérêt légitime} (contrat, obligations légales, \dots)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  \begin{itemize}
+  \item {Informations Claires} : informer sur la manière dont leurs données sont collectées, utilisées, stockées et partagées.
+        \item {Accès et Rectification} : droit d'accès, de correction ou de suppression.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Minimisation des Données
+  \begin{itemize}
+  \item {Données pertinentes} et nécessaires
+  \item {Anonymisation et pseudonymisation}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Droits des Utilisateurs
+
+  \begin{itemize}
+  \item {Droit à l'oubli}
+  \item {Portabilité des données}
+  \item {Opposition}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Sécurité des Données
+  \begin{itemize}
+  \item {Protection des données}
+  \item {Data breach}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Responsabilité et documentation
+
+  \begin{itemize}
+  \item {DPO}
+  \item {Documentation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD et l'IA/ML}
+  \begin{itemize}
+  \item {Biais et discrimination}
+  \item {Explicabilité} \purple{\textit{(droit à une explication ?)}}
+  \item {Impact sur la vie privée}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+    \begin{itemize}
+        \item {Transfert en dehors de l'UE}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+\begin{itemize}
+    \item {DPIA pour les Systèmes ML/IA}
+    \item Identification et atténuation des risques pour la vie privée.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  \begin{itemize}
+  \item {Techniques de protection des données}
+  \item Protection contre la ré-identification des individus.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  \begin{itemize}
+  \item {Précautions pour les Données Sensibles}
+    \item Conformité avec les exigences strictes du RGPD.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Décisions automatisées et profilage
+
+  \begin{itemize}
+  \item {Limites des décisions automatisées} \purple{\textit{(droit de
+        ne pas être soumis à des décisions basées uniquement sur un
+        traitement automatisé ?)}}
+  \item Intervention humaine nécessaire pour certaines décisions importantes.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Minimisation des données pour l'entraînement des modèles
+
+  \begin{itemize}
+  \item {Minimisation et pertinence}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{RGPD}
+  Sécurité des Données
+
+  \begin{itemize}
+  \item {Sécurité des modèles et des données}
+  \item Protection contre les accès non autorisés et les cyberattaques.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Éco-conception et optimisation des ressources}
+  \begin{itemize}
+  \item Explication de l'impact environnemental des technologies ML
+    (énergie, matériel, etc.).
+  \item Techniques pour réduire la consommation d'énergie (par
+    exemple, optimisation des modèles, utilisation d'infrastructures
+    plus vertes).
+  \item Importance de l'éco-conception dans le cycle de vie du
+    développement ML.
+    \begin{itemize}
+    \item Choix du modèle
+    \item Quantité de données
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Accessibilité et inclusivité}
+  \begin{itemize}
+  \item Le ML peut aider à améliorer l'accessibilité (reconnaissance
+    vocale, traduction automatique, etc.).
+  \item Enjeux de l'inclusivité dans les jeux de données et les biais
+    potentiels (Uber, sèche-mains, reconnaissance faciale, \dots).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Sécurité et protection des données}
+  \begin{itemize}
+  \item Principes de base de la sécurisation des données dans les
+    projets ML.
+  \item Impact du RGPD sur la collecte et l'utilisation des données.
+  \item Stratégies pour sécuriser les données, y compris le
+    chiffrement (au repos et en transit) et l'anonymisation.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Définition et contexte}
+  \begin{itemize}
+  \item {Introduction à la deanonymisation} (surtout avant entraînement)
+  \item {Exemple} : taxis (mais pas que)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Techniques utilisées pour la deanonymisation}
+  \begin{itemize}
+  \item {Inférence de données} : des
+    informations apparemment anonymes peuvent être croisées avec
+    d'autres sources de données pour réidentifier des individus.
+  \item {Limites de l'anonymisation} : Certaines méthodes
+    d'anonymisation échouent --- par exemple, insuffisance de
+    l'agrégation, réversibilité des hachages avec puissance de calcul
+    élevée, \dots.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Stratégies de protection contre la deanonymisation}
+  \begin{itemize}
+  \item \textbf{Renforcement des techniques d'anonymisation} :
+    Approfondir des méthodes avancées comme le "differential privacy",
+    où l'ajout de bruit dans les données empêche la réidentification.
+  \item \textbf{Contrôles d'accès et surveillance} : Mettre en place
+    des politiques strictes de contrôle d'accès aux données et des
+    audits réguliers pour détecter et prévenir les tentatives de
+    deanonymisation.
+  \item \textbf{Formation et sensibilisation} : Souligner l'importance
+    de former le personnel impliqué dans les projets du ML à comprendre
+    et à mettre en œuvre des pratiques de gestion des données
+    sécurisées.
+  \end{itemize}
+\end{frame}
+
+\talksection{Exercice}
+
+\begin{frame}{Exercice}
+  Choisir un projet et analyser comment le rendre plus sécure, plus
+  respectueux de la vie privée et moins energivore.
+\end{frame}
+
+\begin{frame}{Étapes de l'exercice}
+  \begin{itemize}
+  \item Choisir un projet
+  \item Identifier les enjeux spécifiques en matière d'éthique,
+    d'accessibilité, d'éco-conception, et de protection des données.
+  \item {Élaborer une solution}
+    \begin{itemize}
+    \item Proposer un modèle de machine learning adapté.
+    \item Planifier des méthodes pour minimiser l'impact écologique
+      (serveurs verts, optimisation du modèle).
+    \item Développer des stratégies pour garantir l'accessibilité et
+      l'inclusivité.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
