@@ -1,0 +1,167 @@
+\input ../talk-header.tex
+\title{Machine Learning et IA}
+\subtitle{Modèles, algorithmes et intuition}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\talksection{Bienvenue}
+
+\begin{frame}{Structure}
+  \only<1>{
+    Une matinée
+    \begin{itemize}
+    \item  17 octobre 2024
+    \end{itemize}
+  }
+  \only<2>{
+    \begin{itemize}
+    \item Email \url{jeff@p27.eu}
+    \item Github : \url{https://github.com/JeffAbrahamson/ML-diva-beapp}
+    \end{itemize}
+  }
+  \only<3>{
+    Un peu en boucle :
+    \begin{itemize}
+    \item Modèles
+    \item Algorithmes
+    \item Exemples
+    \end{itemize}
+  }
+\end{frame}
+
+\talksection{Go}
+
+\begin{frame}{Le modèle le plus simple}
+  Quel est le problème le plus simple imaginable ?
+
+  Quel est le modèle le plus simple imaginable ?
+  \only<2->{
+
+    \blue{Un constant}
+  }
+  \only<3->{
+
+    \purple{Par exemple ?}
+  }
+  \only<4->{
+
+    \small{\it La hauteur d'une porte.  Deux cas{\only<4>{\dots}\only<5->{ : \purple{\it design, découverte}}}}
+  }
+  \only<6->{
+
+    Par exemple,
+    \begin{itemize}
+    \item Moyen
+    \item Médian
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Un modèle toujours simple}
+  Mais un peu plus complexe.
+
+  Le modèle \only<1>{?}\only<2->{: \blue{linéaire}}
+  \only<2->{
+
+    \purple{Des exemples ?}
+  }
+\end{frame}
+
+\begin{frame}{Et si ce n'est pas linéaire ?}
+  \only<1>{Comment s'adapter ?}
+  \only<2->{1. Commencer avec linéaire, est-ce que ça ajoute la valeur nécessaire ?}
+  \only<3->{
+
+    2. Sinon, ajouter un nouveau modèle aux résidus.
+
+    \purple{\it Regarder les résidus, c'est quand même toujours une bonne idée.}
+  }
+  \only<4->{
+
+    Exemple A : (presse) Changement d'UX, plus de lecture ?
+    \purple{\it(penser métriques, critères)}
+  }
+  \only<5->{
+
+    Exemple B : (IOT) Changement de X, plus d'autonomie ?
+    \purple{\it(penser métriques, critères)}
+  }
+\end{frame}
+
+\begin{frame}{Vraiment pas linéaire}
+  Distinguons entre pas linéaire parce que bombé \textit{(linéaire
+    peut marcher toute de même)}
+
+  \red{--- et ---}
+
+  rugueux, petites vagues complexes, beaucoup de minima et maxima
+  locaux \textit{(pas de chance avec linéaire)}
+
+  \only<2->{\purple{Rugueux peut bénéficier d'un modèle capable de
+      trouver un séparateur plus complèxe.}
+}
+\only<3->{
+
+  Options :
+  \begin{itemize}
+  \item SVM avec RBF (assez simple à mettre en oeuvre)
+  \item Random forest (meilleure explicabilité, pour un certain esprit)
+  \item ANN or gradient boosted trees (plus de boulot garanti, mais souvent meilleur)
+  \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Exercice}
+  \underbar{Presse}
+
+  J'utilise un modèle génératif de Hugging Face afin de créer des
+  résumé de 1--2~lignes de chaque article.  J'affiche le résumé en
+  haut de l'article, façon chapô.
+
+  \purple{Questions :}
+  \only<2->{
+  \begin{itemize}
+  \item Est-ce que les lecteurs lisent plus d'articles ?
+    \only<3->{\item Est-ce que les lecteurs cliquent plus de publicités ?}
+    \only<4->{\item Est-ce qu'un lecteur qui clique deux articles aura plus de chance d'en cliquer~5 ?}
+    \only<5->{\item Est-ce que le longueur de l'abstrait change la réponse ?}
+  \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Exercice}
+  \underbar{E-commerce}
+
+  Je teste un nouveau système de recommandation.
+
+  \purple{Questions :}
+  \only<2->{
+    \begin{itemize}
+    \item Est-ce que le changement augmente le CTR ?
+    \only<3->{\item Est-ce que le changement augmente revenu ?}
+    \only<4->{\item Est-ce que le changement augmente le taux de retour ?}
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Exercice}
+  \underbar{Détection de fraude}
+
+  \only<2->{Définir le problème, quel surface ou frontière de décision
+    pensez-vous avoir créer ?}
+
+  \only<3->{Quels algorithmes vous semblent pertinents (et pourquoi) ?}
+
+  \only<4->{Quels problèmes sont pertinents à considérer une fois que
+    vous commencez à travailler ?}
+\end{frame}
+
+\begin{frame}{Exercice}
+  \underbar{Vos problèmes}
+\end{frame}
+
+\end{document}
